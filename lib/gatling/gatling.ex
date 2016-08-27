@@ -1,8 +1,21 @@
 defmodule Gatling do
   import Gatling.Utilities
 
-  def env(project), do: env(project, port: nil)
-  def env(project, [port: port]) do
+  @moduledoc """
+  Kick off the Gatling deploy process with the Gatling.env/1
+
+  Returns a environment struct to be used through the deployment
+  """
+
+  @type project_name :: binary()
+  @type gatling_env :: %Gatling.Env{}
+
+  @doc """
+  Build all the information needed to perform a gatling deploy.
+  """
+  @spec env(project_name, [{:atom, integer()}]) :: gatling_env
+
+  def env(project, [port: port] \\ [port: nil]) do
     port = if port == :find, do: available_port, else: port
     domains = domains(project)
     %Gatling.Env{

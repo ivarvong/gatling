@@ -1,6 +1,10 @@
 defmodule Gatling.Utilities do
   require EEx
 
+  @moduledoc """
+  Used by Gatling to generate the `%Gatling.Env{}`
+  """
+
   def nginx_dir do
     Application.get_env(:gatling, :nginx_dir) || "/etc/nginx"
   end

@@ -1,4 +1,31 @@
 defmodule Gatling.Env do
+  @moduledoc """
+  The %Gatling.Env{} struct
+  """
+
+  # @type gatling_env :: %Gatling.Env{
+  #   available_port: binary()
+  #   available_tasks: list(binary()),
+  #   build_dir: binary(),
+  #   built_release_path: binary(),
+  #   deploy_callback_module: 
+  #   deploy_dir: "",
+  #   deploy_path: "",
+  #   domains: "",
+  #   etc_dir: "",
+  #   etc_path: "",
+  #   git_hook_path: "",
+  #   nginx_available_path: "",
+  #   nginx_dir: "",
+  #   nginx_enabled_path: "",
+  #   nginx_template: "",
+  #   project: "",
+  #   script_template: "",
+  #   upgrade_callback_module: "",
+  #   upgrade_dir: "",
+  #   upgrade_path: "",
+  #   version: "",
+  # }
 
   defstruct ~w[
       available_port
